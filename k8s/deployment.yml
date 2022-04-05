@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+kind apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-pipeline
@@ -7,7 +7,6 @@ spec:
   selector:
     matchLabels:
       app: deployment-pipeline
-  replicas: 0 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
@@ -16,5 +15,9 @@ spec:
       containers:
       - name: deployment-pipeline
         image: 861531569385.dkr.ecr.us-east-2.amazonaws.com/ecr-pipeline:number .
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 80
