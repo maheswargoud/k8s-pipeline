@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: deployment-pipeline
-        image: 861531569385.dkr.ecr.us-east-2.amazonaws.com/ecr-pipeline:number .
+        image: 861531569385.dkr.ecr.us-east-2.amazonaws.com/ecr-pipeline:23
         resources:
           limits:
             memory: "128Mi"
